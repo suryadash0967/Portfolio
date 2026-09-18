@@ -33,21 +33,18 @@ export default function About() {
         { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.2, scrollTrigger: { trigger: triggerRef.current, start: "top 70%" } }
       );
 
-      // 2. Scroll Storytelling (pinning and changing text)
+      // 2. Scroll Storytelling (pinning and stats)
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: triggerRef.current,
-          start: "top 30%",
-          end: "+=150%", // Scroll distance
+          start: "top 20%",
+          end: "+=100%", // Scroll distance
           scrub: 1,
           pin: true,
         }
       });
 
-      tl.to(line2Ref.current, { opacity: 0, y: -20, duration: 1 })
-        .fromTo(line3Ref.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 }, "-=0.5")
-        // Simultaneously bring in the stats
-        .fromTo(statsRef.current, { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 1.5 }, "-=1");
+      tl.fromTo(statsRef.current, { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 1.5 });
 
       // 3. Stats Animation Trigger (when stats actually become visible)
       ScrollTrigger.create({
@@ -57,7 +54,7 @@ export default function About() {
           // Counter animation for 100+
           const counter = { val: 0 };
           gsap.to(counter, {
-            val: 100,
+            val: 3000,
             duration: 2,
             ease: "power2.out",
             onUpdate: () => {
@@ -101,25 +98,20 @@ export default function About() {
               </h2>
               
               <div className={styles.statementContainer}>
-                {/* <p 
+                <p 
                   className={`${styles.secondaryStatement} ${isHovered ? styles.hovered : ''}`} 
                   ref={line2Ref}
                   onMouseEnter={() => setIsHovered(true)}
                   onMouseLeave={() => setIsHovered(false)}
                 >
-                  <span className={styles.baseText}>Usually on purpose.</span>
-                  <span className={styles.surpriseText}>(mostly.)</span>
-                </p> */}
-                
-                <h2 className={styles.tertiaryStatement} ref={line3Ref}>
-                  USUALLY ON PURPOSE&nbsp; {' ;)'}
-                </h2>
+                  <span className={styles.baseText}>Usually on purpose {';)'}</span>
+                </p>
               </div>
             </div>
 
             <div className={styles.statsArea} ref={statsRef}>
               <div className={styles.statGroup}>
-                <h3 className={styles.statNumber} ref={numberRef}>3000+</h3>
+                <h3 className={styles.statNumber} ref={numberRef}>0+</h3>
                 <p className={styles.statLabel}>USERS IMPACTED</p>
               </div>
               

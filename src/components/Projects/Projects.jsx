@@ -237,7 +237,7 @@ export default function Projects() {
                 </ul>
                 
                 <button className={styles.caseStudyBtn} data-cursor="magnetic">
-                  VIEW CASE STUDY <ArrowUpRight size={18} />
+                  GITHUB <ArrowUpRight size={18} />
                 </button>
               </div>
             </div>

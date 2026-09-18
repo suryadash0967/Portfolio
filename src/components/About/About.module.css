@@ -1,16 +1,17 @@
 .about {
   position: relative;
   width: 100%;
-  min-height: 150vh; /* Extra height for pinning and scroll scrubbing */
+  min-height: 150vh;
+  /* Extra height for pinning and scroll scrubbing */
   z-index: 10;
   background: transparent;
 }
 
 .triggerArea {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .container {
@@ -87,7 +88,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  cursor: crosshair; /* Subtle hint */
+  cursor: crosshair;
+  /* Subtle hint */
 }
 
 /* Micro-interaction */
@@ -127,7 +129,8 @@
   color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: -0.01em;
-  opacity: 0; /* Hidden initially, revealed by GSAP */
+  opacity: 0;
+  /* Hidden initially, revealed by GSAP */
 }
 
 .statsArea {
@@ -137,7 +140,8 @@
   flex-direction: column;
   gap: var(--spacing-xl);
   padding-bottom: var(--spacing-xl);
-  opacity: 0; /* Revealed by GSAP */
+  opacity: 0;
+  /* Revealed by GSAP */
 }
 
 .statGroup {
@@ -191,12 +195,12 @@
     flex-direction: row;
     align-items: center;
   }
-  
+
   .label {
     writing-mode: horizontal-tb;
     transform: none;
   }
-  
+
   .decorativeLine {
     width: 100px;
     height: 1px;
