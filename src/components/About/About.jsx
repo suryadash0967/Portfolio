@@ -129,7 +129,7 @@ export default function About() {
 
               <div className={styles.statGroup}>
                 <h3 className={styles.statNumber}>20 YEARS OLD</h3>
-                <p className={styles.statLabel}>TOO YOUNG? SHE SAID IT FIRST</p>
+                <p className={styles.statLabel}>TOO YOUNG? TWSS.</p>
               </div>
               
             </div>
