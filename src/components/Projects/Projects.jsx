@@ -13,25 +13,6 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: '01',
-    title: 'MSIL AI Assistant & Analytics',
-    descriptor: 'TAUGHT IT TO READ',
-    type: 'Enterprise AI Application',
-    tech: 'NextJS / Python / FastAPI / RAG / FAISS',
-    date: 'May 2025 - July 2025',
-    description: 'An internal RAG-based assistant and demand analytics dashboard for Maruti Suzuki Industry Limited.',
-    highlights: [
-      'Engineered a RAG-based assistant leveraging document chunking, embeddings, and vector search',
-      'Developed a demand analytics dashboard to monitor forecasts and key departmental KPIs',
-      'Built scalable data processing pipelines for indexing 100+ knowledge assets'
-    ],
-    color: 'transparent',
-    accent: 'rgba(30, 169, 204, 0.2)',
-    image: msilImg,
-    link: 'https://github.com/suryadash0967/bp3-demands-portfolio',
-    linkText: 'GITHUB'
-  },
-  {
-    id: '02',
     title: 'Purfurry',
     descriptor: 'DOGS, CATS & JAVASCRIPT',
     type: 'Full-Stack Platform',
@@ -48,6 +29,25 @@ const projects = [
     image: purfurryImg,
     link: 'https://www.purfurry.com',
     linkText: 'VISIT SITE'
+  },
+  {
+    id: '02',
+    title: 'MSIL AI Assistant & Analytics',
+    descriptor: 'TAUGHT IT TO READ',
+    type: 'Enterprise AI Application',
+    tech: 'NextJS / Python / FastAPI / RAG / FAISS',
+    date: 'May 2025 - July 2025',
+    description: 'An internal RAG-based assistant and demand analytics dashboard for Maruti Suzuki Industry Limited.',
+    highlights: [
+      'Engineered a RAG-based assistant leveraging document chunking, embeddings, and vector search',
+      'Developed a demand analytics dashboard to monitor forecasts and key departmental KPIs',
+      'Built scalable data processing pipelines for indexing 100+ knowledge assets'
+    ],
+    color: 'transparent',
+    accent: 'rgba(30, 169, 204, 0.2)',
+    image: msilImg,
+    link: 'https://github.com/suryadash0967/bp3-demands-portfolio',
+    linkText: 'GITHUB'
   },
   {
     id: '03',

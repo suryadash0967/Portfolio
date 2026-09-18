@@ -135,11 +135,10 @@
 
 .statsArea {
   grid-column: 3 / 4;
-  align-self: end;
+  align-self: center;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
-  padding-bottom: var(--spacing-xl);
+  gap: var(--spacing-lg);
   opacity: 0;
   /* Revealed by GSAP */
 }
@@ -151,7 +150,7 @@
 }
 
 .statNumber {
-  font-size: clamp(3rem, 5vw, 5rem);
+  font-size: clamp(2.5rem, 4vw, 4rem);
   line-height: 1;
   color: var(--text-primary);
   font-family: var(--font-display);
@@ -159,7 +158,7 @@
 }
 
 .statText {
-  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  font-size: clamp(1.8rem, 3vw, 3rem);
   line-height: 1;
   color: var(--text-primary);
   text-transform: uppercase;
@@ -170,7 +169,7 @@
 }
 
 .statSubtle {
-  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.2rem, 2vw, 2rem);
   line-height: 1;
   color: var(--text-secondary);
   font-family: var(--font-display);
