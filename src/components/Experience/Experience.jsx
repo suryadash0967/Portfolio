@@ -96,7 +96,7 @@ export default function Experience() {
   }, []);
 
   return (
-    <section className={styles.experience} ref={containerRef}>
+    <section id="experience" className={styles.experience} ref={containerRef}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.sectionTitle}>EXPERIENCE</h2>

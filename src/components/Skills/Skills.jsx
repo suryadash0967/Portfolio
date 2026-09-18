@@ -101,7 +101,7 @@ export default function Skills() {
   };
 
   return (
-    <section className={styles.skills} ref={containerRef}>
+    <section id="skills" className={styles.skills} ref={containerRef}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.sectionTitle}>THINGS I TALK TO COMPUTERS IN</h2>

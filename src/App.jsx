@@ -1,6 +1,7 @@
 import Cursor from './components/Cursor/Cursor';
 import Atmosphere from './components/Atmosphere/Atmosphere';
 import OrbMotif from './components/OrbMotif/OrbMotif';
+import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
 import Skills from './components/Skills/Skills';
@@ -17,6 +18,7 @@ function App() {
       <Atmosphere />
       <OrbMotif />
       <Cursor />
+      <Navbar />
       <main style={{ position: 'relative', zIndex: 10 }}>
         <Hero />
         <About />

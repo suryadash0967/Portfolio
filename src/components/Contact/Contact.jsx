@@ -80,7 +80,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <footer className={styles.contact} ref={containerRef}>
+    <footer id="contact" className={styles.contact} ref={containerRef}>
       <div className={styles.climaxLight} ref={climaxLightRef} />
       
       <div className={styles.container}>

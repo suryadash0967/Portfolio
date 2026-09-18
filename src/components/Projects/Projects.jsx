@@ -188,7 +188,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section className={styles.projectsSection} ref={containerRef}>
+    <section id="projects" className={styles.projectsSection} ref={containerRef}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.sectionTitle}>FEATURED WORK</h2>

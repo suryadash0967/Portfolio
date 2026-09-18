@@ -54,6 +54,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: auto; /* Handled by smooth scroll implementation */
+  overflow-x: hidden;
 }
 
 body {
