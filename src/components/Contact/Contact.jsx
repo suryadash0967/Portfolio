@@ -18,6 +18,8 @@ const LinkedinIcon = ({ size = 24 }) => (
   </svg>
 );
 
+// Just import the resume pdf
+import resumePdf from '../../assets/SURYA_RESUME.pdf';
 import styles from './Contact.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -102,7 +104,7 @@ export default function Contact() {
               <LinkedinIcon size={24} />
               <span>LINKEDIN</span>
             </a>
-            <a href="/resume.pdf" target="_blank" rel="noreferrer" className={`${styles.socialLink} ${styles.resumeBtn}`} data-cursor="magnetic">
+            <a href={resumePdf} target="_blank" rel="noreferrer" className={`${styles.socialLink} ${styles.resumeBtn}`} data-cursor="magnetic">
               <FileText size={24} />
               <span>VIEW RESUME</span>
             </a>

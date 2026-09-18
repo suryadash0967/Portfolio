@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './About.module.css';
@@ -7,44 +7,77 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   const containerRef = useRef(null);
-  const textRef = useRef(null);
+  const triggerRef = useRef(null);
+  
+  const line1Ref = useRef(null);
+  const line2Ref = useRef(null);
+  const line3Ref = useRef(null);
+  
   const statsRef = useRef(null);
+  const numberRef = useRef(null);
+  const cpaRef = useRef(null);
+  
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
+    // We create a timeline pinned to the scroll progress of the container
     const ctx = gsap.context(() => {
-      // Split text animation logic for about section
-      // In a real scenario we might use SplitText, but we'll use CSS/HTML structure
+      // 1. Entrance Animations (when section enters view)
+      gsap.fromTo(line1Ref.current, 
+        { opacity: 0, y: 50 }, 
+        { opacity: 1, y: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: triggerRef.current, start: "top 70%" } }
+      );
       
-      gsap.fromTo(
-        `.${styles.revealText} span`,
-        { opacity: 0.1 },
-        {
-          opacity: 1,
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 70%",
-            end: "bottom 50%",
-            scrub: true,
-          }
-        }
+      gsap.fromTo(line2Ref.current, 
+        { opacity: 0, y: 50 }, 
+        { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.2, scrollTrigger: { trigger: triggerRef.current, start: "top 70%" } }
       );
 
-      gsap.fromTo(
-        statsRef.current.children,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.2,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: statsRef.current,
-            start: "top 85%",
+      // 2. Scroll Storytelling (pinning and changing text)
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: triggerRef.current,
+          start: "top 30%",
+          end: "+=150%", // Scroll distance
+          scrub: 1,
+          pin: true,
+        }
+      });
+
+      tl.to(line2Ref.current, { opacity: 0, y: -20, duration: 1 })
+        .fromTo(line3Ref.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1 }, "-=0.5")
+        // Simultaneously bring in the stats
+        .fromTo(statsRef.current, { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 1.5 }, "-=1");
+
+      // 3. Stats Animation Trigger (when stats actually become visible)
+      ScrollTrigger.create({
+        trigger: statsRef.current,
+        start: "top 80%",
+        onEnter: () => {
+          // Counter animation for 100+
+          const counter = { val: 0 };
+          gsap.to(counter, {
+            val: 100,
+            duration: 2,
+            ease: "power2.out",
+            onUpdate: () => {
+              if (numberRef.current) {
+                numberRef.current.innerText = `${Math.floor(counter.val)}+`;
+              }
+            }
+          });
+          
+          // "Not Bad" word reveal
+          if (cpaRef.current) {
+            const words = cpaRef.current.querySelectorAll('span');
+            gsap.fromTo(words, 
+              { opacity: 0, y: 10 }, 
+              { opacity: 1, y: 0, stagger: 0.2, duration: 0.5, ease: "back.out" }
+            );
           }
         }
-      );
+      });
+
     }, containerRef);
 
     return () => ctx.revert();
@@ -52,34 +85,57 @@ export default function About() {
 
   return (
     <section className={styles.about} ref={containerRef}>
-      <div className={styles.container}>
-        <div className={styles.grid}>
-          <div className={styles.left}>
-            <p className={styles.label}>[ ABOUT ]</p>
-          </div>
-          <div className={styles.right}>
-            <div className={styles.revealText} ref={textRef}>
-              <p>
-                <span>I </span><span>MAKE </span><span>COMPUTERS </span><span>DO </span><span>THINGS. </span>
-              </p>
-              <p>
-                <span className={styles.dimText}>Usually </span><span className={styles.dimText}>on </span><span className={styles.dimText}>purpose.</span>
-              </p>
+      <div className={styles.triggerArea} ref={triggerRef}>
+        <div className={styles.container}>
+          
+          <div className={styles.editorialGrid}>
+            <div className={styles.labelSection}>
+              <p className={styles.label}>[ ABOUT ]</p>
+              <div className={styles.decorativeLine} />
             </div>
             
-            <div className={styles.stats} ref={statsRef}>
-              <div className={styles.stat}>
-                <span className={styles.statNumber}>100+</span>
-                <span className={styles.statLabel}>Users Impacted</span>
-              </div>
-              <div className={styles.stat}>
-                <span className={styles.statNumber}>Not Bad</span>
-                <span className={styles.statLabel}>CGPA</span>
-              </div>
-              <div className={styles.stat}>
-                <span className={styles.statLabel}>B.Tech CSE '27</span>
+            <div className={styles.statementArea}>
+              <h2 className={styles.primaryStatement} ref={line1Ref}>
+                I MAKE COMPUTERS DO <br/>
+                <span className={styles.emphasis}>THINGS.</span>
+              </h2>
+              
+              <div className={styles.statementContainer}>
+                <p 
+                  className={`${styles.secondaryStatement} ${isHovered ? styles.hovered : ''}`} 
+                  ref={line2Ref}
+                  onMouseEnter={() => setIsHovered(true)}
+                  onMouseLeave={() => setIsHovered(false)}
+                >
+                  <span className={styles.baseText}>Usually on purpose.</span>
+                  <span className={styles.surpriseText}>(mostly.)</span>
+                </p>
+                
+                <h2 className={styles.tertiaryStatement} ref={line3Ref}>
+                  USUALLY ON PURPOSE&nbsp; {' ;)'}
+                </h2>
               </div>
             </div>
+
+            <div className={styles.statsArea} ref={statsRef}>
+              <div className={styles.statGroup}>
+                <h3 className={styles.statNumber} ref={numberRef}>1K+</h3>
+                <p className={styles.statLabel}>USERS IMPACTED</p>
+              </div>
+              
+              <div className={styles.statGroup}>
+                <h3 className={styles.statText} ref={cpaRef}>
+                  <span>NOT</span> <span>BAD</span>
+                </h3>
+                <p className={styles.statLabel}>CGPA</p>
+              </div>
+              
+              <div className={styles.statGroup}>
+                <h3 className={styles.statSubtle}>B.TECH CSE '27</h3>
+                <p className={styles.statLabel}>STILL LEARNING</p>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>

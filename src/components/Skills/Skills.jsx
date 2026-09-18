@@ -27,7 +27,7 @@ const nodes = [
   { id: 'pandas', label: 'Pandas/NumPy', cat: 'ai', x: 90, y: 25, links: ['python', 'ml'] },
   { id: 'ml', label: 'Machine Learning', cat: 'ai', x: 85, y: 45, links: ['python', 'pandas', 'rag', 'llms'] },
   { id: 'rag', label: 'RAG', cat: 'ai', x: 70, y: 60, links: ['python', 'ml', 'vector', 'llms'] },
-  { id: 'llms', label: 'LLMs (Gemini)', cat: 'ai', x: 80, y: 75, links: ['rag', 'ml'] },
+  { id: 'llms', label: 'LLMs', cat: 'ai', x: 80, y: 75, links: ['rag', 'ml'] },
   { id: 'vector', label: 'Vector DBs', cat: 'ai', x: 65, y: 80, links: ['rag'] },
   
   // Tools
@@ -123,11 +123,10 @@ export default function Skills() {
             return (
               <div
                 key={node.id}
-                className={`${styles.node} ${styles[node.cat]} ${isDimmed ? styles.dimmed : ''} ${isActive || isConnected ? styles.highlighted : ''}`}
+                className={`${styles.node} hover-target ${styles[node.cat]} ${isDimmed ? styles.dimmed : ''} ${isActive || isConnected ? styles.highlighted : ''}`}
                 style={{ left: `${node.x}%`, top: `${node.y}%` }}
                 onMouseEnter={() => setActiveNode(node.id)}
                 onMouseLeave={() => setActiveNode(null)}
-                data-cursor="explore"
               >
                 <div className={styles.dot} />
                 <span className={styles.nodeLabel}>{node.label}</span>
