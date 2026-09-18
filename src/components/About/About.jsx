@@ -111,11 +111,6 @@ export default function About() {
 
             <div className={styles.statsArea} ref={statsRef}>
               <div className={styles.statGroup}>
-                <h3 className={styles.statNumber}>20 YO</h3>
-                <p className={styles.statLabel}>TOO YOUNG? TWSS</p>
-              </div>
-              
-              <div className={styles.statGroup}>
                 <h3 className={styles.statNumber} ref={numberRef}>0+</h3>
                 <p className={styles.statLabel}>USERS IMPACTED</p>
               </div>
@@ -125,6 +120,11 @@ export default function About() {
                   <span>NOT</span> <span>BAD</span>
                 </h3>
                 <p className={styles.statLabel}>CGPA</p>
+              </div>
+
+              <div className={styles.statGroup}>
+                <h3 className={styles.statNumber}>20 YEARS OLD</h3>
+                <p className={styles.statLabel}>TOO YOUNG? TWSS.</p>
               </div>
               
               <div className={styles.statGroup}>
