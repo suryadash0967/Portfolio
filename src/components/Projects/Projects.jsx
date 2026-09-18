@@ -26,7 +26,9 @@ const projects = [
     ],
     color: 'transparent',
     accent: 'rgba(30, 169, 204, 0.2)',
-    image: msilImg
+    image: msilImg,
+    link: 'https://github.com/suryadash0967/bp3-demands-portfolio',
+    linkText: 'GITHUB'
   },
   {
     id: '02',
@@ -43,7 +45,9 @@ const projects = [
     ],
     color: 'transparent',
     accent: 'rgba(180, 40, 200, 0.2)',
-    image: purfurryImg
+    image: purfurryImg,
+    link: 'https://www.purfurry.com',
+    linkText: 'VISIT SITE'
   },
   {
     id: '03',
@@ -60,7 +64,9 @@ const projects = [
     ],
     color: 'transparent',
     accent: 'rgba(67, 30, 204, 0.2)',
-    image: null // We will use CSS jugaad here
+    image: null, // We will use CSS jugaad here
+    link: 'https://github.com/suryadash0967/excel-analytics',
+    linkText: 'GITHUB'
   },
   {
     id: '04',
@@ -77,7 +83,9 @@ const projects = [
     ],
     color: 'transparent',
     accent: 'rgba(204, 94, 30, 0.2)',
-    image: maadhyamImg
+    image: maadhyamImg,
+    link: 'https://github.com/Abhinash04/Maadhyam',
+    linkText: 'GITHUB'
   }
 ];
 
@@ -236,9 +244,9 @@ export default function Projects() {
                   ))}
                 </ul>
                 
-                <button className={styles.caseStudyBtn} data-cursor="magnetic">
-                  GITHUB <ArrowUpRight size={18} />
-                </button>
+                <a href={project.link} target="_blank" rel="noreferrer" className={styles.caseStudyBtn} data-cursor="magnetic">
+                  {project.linkText} <ArrowUpRight size={18} />
+                </a>
               </div>
             </div>
           ))}
