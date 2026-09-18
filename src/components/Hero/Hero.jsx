@@ -84,7 +84,7 @@ export default function Hero() {
         </h1>
         <div className={styles.meta} ref={descRef}>
           <p>SURYA NARAYAN DASH</p>
-          <p className={styles.role}>SOFTWARE ENGINEER & CREATIVE DEVELOPER</p>
+          <p className={styles.role}>FULL STACK AI & WEB DEVELOPER</p>
         </div>
       </div>
       
