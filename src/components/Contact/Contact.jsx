@@ -113,7 +113,6 @@ export default function Contact() {
         
         <div className={styles.bottomBar}>
           <p>© {new Date().getFullYear()} SURYA NARAYAN DASH. ALL RIGHTS RESERVED.</p>
-          <p className={styles.statusLabel}>SYSTEM / ONLINE</p>
         </div>
       </div>
     </footer>

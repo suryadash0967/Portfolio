@@ -69,11 +69,6 @@ export default function Hero() {
         <div className={styles.ambientGlow1}></div>
         <div className={styles.ambientGlow2}></div>
       </div>
-      
-      <div className={styles.technicalOverlay}>
-        <div className={styles.coordTopLeft}>[ X: 45.2, Y: 90.1 ]</div>
-        <div className={styles.coordBottomRight}>SYS.READY</div>
-      </div>
 
       <div className={styles.content}>
         <h1 className={styles.headline}>
