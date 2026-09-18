@@ -116,7 +116,12 @@ export default function About() {
               </div>
               
               <div className={styles.statGroup}>
-                <h3 className={styles.statText} ref={cpaRef}>
+                <h3 className={styles.statNumber}>B.TECH CSE '27</h3>
+                <p className={styles.statLabel}>STILL LEARNING</p>
+              </div>
+
+              <div className={styles.statGroup}>
+                <h3 className={styles.statNumber} ref={cpaRef}>
                   <span>NOT</span> <span>BAD</span>
                 </h3>
                 <p className={styles.statLabel}>CGPA</p>
@@ -124,13 +129,9 @@ export default function About() {
 
               <div className={styles.statGroup}>
                 <h3 className={styles.statNumber}>20 YEARS OLD</h3>
-                <p className={styles.statLabel}>TOO YOUNG? TWSS.</p>
+                <p className={styles.statLabel}>TOO YOUNG? SHE SAID IT FIRST</p>
               </div>
               
-              <div className={styles.statGroup}>
-                <h3 className={styles.statSubtle}>B.TECH CSE '27</h3>
-                <p className={styles.statLabel}>STILL LEARNING</p>
-              </div>
             </div>
             
           </div>
