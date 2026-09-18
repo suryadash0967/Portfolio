@@ -101,7 +101,7 @@ export default function About() {
               </h2>
               
               <div className={styles.statementContainer}>
-                <p 
+                {/* <p 
                   className={`${styles.secondaryStatement} ${isHovered ? styles.hovered : ''}`} 
                   ref={line2Ref}
                   onMouseEnter={() => setIsHovered(true)}
@@ -109,7 +109,7 @@ export default function About() {
                 >
                   <span className={styles.baseText}>Usually on purpose.</span>
                   <span className={styles.surpriseText}>(mostly.)</span>
-                </p>
+                </p> */}
                 
                 <h2 className={styles.tertiaryStatement} ref={line3Ref}>
                   USUALLY ON PURPOSE&nbsp; {' ;)'}
@@ -119,7 +119,7 @@ export default function About() {
 
             <div className={styles.statsArea} ref={statsRef}>
               <div className={styles.statGroup}>
-                <h3 className={styles.statNumber} ref={numberRef}>1K+</h3>
+                <h3 className={styles.statNumber} ref={numberRef}>3000+</h3>
                 <p className={styles.statLabel}>USERS IMPACTED</p>
               </div>
               
