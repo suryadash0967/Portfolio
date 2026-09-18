@@ -1,0 +1,21 @@
+.orb {
+  position: fixed;
+  top: 40vh;
+  left: 70vw;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(67, 30, 204, 0.9);
+  box-shadow: 0 0 30px rgba(67, 30, 204, 0.5);
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  will-change: top, left, transform, background-color, box-shadow;
+}
+
+@media (max-width: 768px) {
+  .orb {
+    display: none;
+  }
+}

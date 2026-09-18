@@ -1,0 +1,85 @@
+.about {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xl) var(--container-px);
+  position: relative;
+  background-color: var(--bg-secondary);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: var(--spacing-lg);
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--text-secondary);
+  position: sticky;
+  top: 50vh;
+}
+
+.revealText {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.2;
+  font-weight: 400;
+  margin-bottom: var(--spacing-xl);
+}
+
+.revealText span {
+  display: inline-block;
+  color: var(--text-primary);
+  margin-right: 0.25em;
+  /* The opacity is handled by GSAP, but starts at 0.1 */
+}
+
+.stats {
+  display: flex;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+  border-top: 1px solid var(--accent-border);
+  padding-top: var(--spacing-md);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.statNumber {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.statLabel {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .label {
+    position: static;
+    margin-bottom: var(--spacing-sm);
+  }
+}

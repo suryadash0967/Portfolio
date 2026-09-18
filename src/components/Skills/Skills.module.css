@@ -1,0 +1,137 @@
+.skills {
+  padding: var(--spacing-xl) 0;
+  position: relative;
+  z-index: 10;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+.header {
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  z-index: 20;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--text-secondary);
+}
+
+.constellationWrapper {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.02) 0%, transparent 70%);
+  border-radius: 20px;
+  border: 1px solid var(--accent-border);
+  overflow: hidden;
+}
+
+.svgLayer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.svgLine {
+  stroke: var(--accent-subtle);
+  stroke-width: 1.5;
+  stroke-dasharray: 4;
+  animation: dash 20s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
+.node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s var(--ease-spring);
+  cursor: pointer; /* Fallback for no custom cursor */
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--text-secondary);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px transparent;
+}
+
+.nodeLabel {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  background-color: rgba(0,0,0,0.5);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Hover / Active States */
+.node:hover {
+  z-index: 10;
+}
+
+.node:hover .dot, .highlighted .dot {
+  transform: scale(1.5);
+}
+
+.node:hover .nodeLabel, .highlighted .nodeLabel {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.dimmed {
+  opacity: 0.2;
+}
+
+/* Categories Colors */
+.front .dot { background-color: #61dafb; }
+.back .dot { background-color: #68a063; }
+.db .dot { background-color: #4db33d; }
+.ai .dot { background-color: #ffde57; }
+.tool .dot { background-color: #f34f29; }
+
+.highlighted.front .dot { box-shadow: 0 0 20px #61dafb; }
+.highlighted.back .dot { box-shadow: 0 0 20px #68a063; }
+.highlighted.db .dot { box-shadow: 0 0 20px #4db33d; }
+.highlighted.ai .dot { box-shadow: 0 0 20px #ffde57; }
+.highlighted.tool .dot { box-shadow: 0 0 20px #f34f29; }
+
+@media (max-width: 768px) {
+  .constellationWrapper {
+    height: 80vh;
+  }
+  .nodeLabel {
+    font-size: 0.7rem;
+  }
+}
