@@ -205,9 +205,12 @@ export default function Projects() {
                 />
                 <div className={styles.visual}>
                   <div className={styles.maskReveal}>
-                    <div 
+                    <a 
+                      href={project.link}
+                      target="_blank"
+                      rel="noreferrer"
                       className={styles.imageWrapper} 
-                      style={{ backgroundColor: project.color }}
+                      style={{ backgroundColor: project.color, display: 'block', textDecoration: 'none' }}
                       data-cursor="view"
                     >
                       {project.image ? (
@@ -219,7 +222,7 @@ export default function Projects() {
                       ) : (
                         <ExcelJugaad />
                       )}
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>
