@@ -12,9 +12,9 @@ const experiences = [
     date: 'May 2025 - July 2025',
     tech: 'ReactJS, NextJS, NodeJS, Python, FastAPI, RAG, FAISS/ChromaDB',
     points: [
-      { title: 'TAUGHT A MACHINE TO READ.', desc: 'Engineered an internal RAG-based assistant leveraging document chunking, embeddings, vector search, and LLM-powered responses.' },
-      { title: 'MADE NUMBERS LESS BORING.', desc: 'Developed a demand analytics dashboard to monitor forecasts, trends, and key departmental KPIs.' },
-      { title: 'A LOT OF DATA.', desc: 'Built scalable data processing pipelines for indexing and retrieving information from 100+ knowledge assets.' }
+      { desc: 'Engineered an internal RAG-based assistant leveraging document chunking, embeddings, vector search, and LLM-powered responses.' },
+      { desc: 'Developed a demand analytics dashboard to monitor forecasts, trends, and key departmental KPIs.' },
+      { desc: 'Built scalable data processing pipelines for indexing and retrieving information from 100+ knowledge assets.' }
     ]
   },
   {
@@ -23,9 +23,9 @@ const experiences = [
     date: 'Aug 2024 - May 2025',
     tech: 'MERN / Redis Caching / Technical SEO / Performance Optimization',
     points: [
-      { title: 'THE ALGORITHM LIKED THIS.', desc: 'Engineered comprehensive technical and on-page SEO optimizations for a ReactJS-based architecture, catapulting search rankings to consistent Top-5 first-page positions.' },
-      { title: 'TRAFFIC JAM.', desc: 'Accelerated platform visibility and user acquisition, achieving a sustained run rate of ~1.5K monthly views and converting ~90-120 new active users per month.' },
-      { title: 'MADE IT FASTER.', desc: 'Redesigned key UI flows and optimized frontend responsiveness using ReactJS and data-driven performance improvements.' }
+      { desc: 'Engineered comprehensive technical and on-page SEO optimizations for a ReactJS-based architecture, catapulting search rankings to consistent Top-5 first-page positions.' },
+      { desc: 'Accelerated platform visibility and user acquisition, achieving a sustained run rate of ~1.5K monthly views and converting ~90-120 new active users per month.' },
+      { desc: 'Redesigned key UI flows and optimized frontend responsiveness using ReactJS and data-driven performance improvements.' }
     ]
   },
   {
@@ -34,8 +34,8 @@ const experiences = [
     date: 'June 2024 - July 2024',
     tech: 'MERN / Chart.js / Three.js / SheetJS / JWT',
     points: [
-      { title: 'BROWSER-BASED MAGIC.', desc: 'Developed Excel Analytics, enabling secure Excel uploads, AI-powered insights, and 5+ interactive 2D/3D visualizations for 100+ users.' },
-      { title: 'OUTSOURCED TO AI.', desc: 'Leveraged Gemini Flash LLM for automated semantic analysis of unstructured Excel data, generating business insights with 95% accuracy.' }
+      { desc: 'Developed Excel Analytics, enabling secure Excel uploads, AI-powered insights, and 5+ interactive 2D/3D visualizations for 100+ users.' },
+      { desc: 'Leveraged Gemini Flash LLM for automated semantic analysis of unstructured Excel data, generating business insights with 95% accuracy.' }
     ]
   }
 ];
@@ -123,7 +123,7 @@ export default function Experience() {
                 
                 <ul className={styles.points}>
                   {exp.points.map((point, i) => (
-                    <li key={i}><strong>{point.title}</strong> {point.desc}</li>
+                    <li key={i}>{point.desc}</li>
                   ))}
                 </ul>
               </div>
